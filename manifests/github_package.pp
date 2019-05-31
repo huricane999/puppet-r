@@ -41,7 +41,7 @@ define r::github_package (
         $binary = $r_path
       }
 
-      $command = "${binary} -e \"library(devtools); install_github('${package_name}', username = '${org}', dependencies = ${deps})\""
+      $command = "${binary} -e \"library(devtools); install_github('${org}/${package_name}', dependencies = ${deps})\""
 
         exec { "install_r_package_${name}":
           command     => $command,
